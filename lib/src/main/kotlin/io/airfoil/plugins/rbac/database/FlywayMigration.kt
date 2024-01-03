@@ -20,7 +20,7 @@ fun Application.configureRBACFlywayMigration(
     val flywayConfig = Flyway
         .configure()
         .dataSource(dbUrl, dbUsername, dbPassword)
-        .table("flyway_schema_history_rbac")
+        .table("_flyway_rbac")
         .load()
         .getConfiguration() as ClassicConfiguration
     flywayConfig.setLocationsAsStrings(*listOf(RBAC_DATA_MIGRATION_LOCATION).toTypedArray())
