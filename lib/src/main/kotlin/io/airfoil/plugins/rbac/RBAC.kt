@@ -39,10 +39,10 @@ fun Application.rbacController(rbacController: RoleBasedAccessController) {
 }
 
 fun Application.configureRBAC(
-    rbacSubjects: Set<Subject> = emptySet(),
     dbUrl: String,
     dbUsername: String,
     dbPassword: String,
+    rbacSubjects: Set<Subject> = emptySet(),
 ) {
     loadRBACConfiguration(rbacSubjects)
     configureRBACFlywayMigration(dbUrl, dbUsername, dbPassword)
